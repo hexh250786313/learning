@@ -1,3 +1,8 @@
+A funtion that find key / value / key-value pairs paths
+
+Run this in [runjs](https://runjs.co/)
+
+```typescript
 const findKeyValuePairsPath: (
   keyToFind: string | undefined,
   valueToFind: any,
@@ -81,36 +86,9 @@ const findKeyValuePairsPath: (
   return paths;
 };
 
-const test1 = {
-  a1: {
-    b: {
-      c: [3, 4, 5, 6],
-    },
-  },
-  a2: 4,
-  c3: [4],
-};
+const test1 = { a1: { b: { c: [3, 4, 5, 6], }, }, a2: 4, c3: [4], };
 
-const test2 = [
-  {
-    a1: {
-      b: {
-        c: [3, 4, 5, 6],
-      },
-    },
-    a2: 4,
-    c3: [4],
-  },
-  {
-    a1: {
-      b: {
-        c: [3, 4, 5, 6],
-      },
-    },
-    a2: 4,
-    c3: [4],
-  },
-];
+const test2 = [ { a1: { b: { c: [3, 4, 5, 6], }, }, a2: 4, c3: [4], }, { a1: { b: { c: [3, 4, 5, 6], }, }, a2: 4, c3: [4], }, ];
 
 console.log("test1");
 console.log(findKeyValuePairsPath(undefined, 4, test1));
@@ -127,3 +105,4 @@ console.log(findKeyValuePairsPath("1", undefined, test2)); // @todo: can not fin
 console.log(findKeyValuePairsPath("1", 4, test2)); // @todo: can not find by array index
 console.log(findKeyValuePairsPath("a2", 4, test2));
 console.log(findKeyValuePairsPath("a2", [4], test2)); // @todo: can not find value that is an object type
+```
